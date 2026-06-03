@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapSplit - Support</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #e5e7eb;
+            background-color: #0e0e0f;
+        }
+        .container {
+            background: #1a1a1c;
+            padding: 36px;
+            border-radius: 16px;
+            border: 1px solid #2a2a2c;
+        }
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 8px;
+        }
+        .app-icon {
+            width: 56px;
+            height: 56px;
+            background: #c8f544;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 1.8em;
+            margin: 0;
+        }
+        .tagline {
+            color: #9ca3af;
+            font-size: 0.95em;
+            margin: 0 0 28px 0;
+            padding-left: 70px;
+        }
+        h2 {
+            color: #c8f544;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .contact-box {
+            background: #222224;
+            border-left: 4px solid #c8f544;
+            border-radius: 0 10px 10px 0;
+            padding: 18px 20px;
+            margin: 24px 0;
+        }
+        .contact-box p {
+            margin: 6px 0;
+        }
+        .contact-box a {
+            color: #c8f544;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        .faq-item {
+            margin-bottom: 14px;
+            background: #222224;
+            border-radius: 10px;
+            border: 1px solid #2a2a2c;
+            overflow: hidden;
+        }
+        .faq-question {
+            font-weight: 600;
+            color: #ffffff;
+            padding: 14px 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+            transition: background 0.15s;
+        }
+        .faq-question:hover {
+            background: #2a2a2c;
+        }
+        .faq-question::after {
+            content: '+';
+            color: #c8f544;
+            font-size: 1.3em;
+            font-weight: 400;
+            flex-shrink: 0;
+            margin-left: 12px;
+            transition: transform 0.2s;
+        }
+        .faq-item.open .faq-question::after {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            color: #9ca3af;
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s ease, padding 0.2s;
+        }
+        .faq-item.open .faq-answer {
+            max-height: 400px;
+            padding: 0 18px 16px 18px;
+        }
+        .faq-answer a {
+            color: #c8f544;
+            text-decoration: none;
+        }
+        .faq-answer a:hover {
+            text-decoration: underline;
+        }
+        .tips-list {
+            margin: 8px 0 0 0;
+            padding-left: 18px;
+        }
+        .tips-list li {
+            margin-bottom: 4px;
+        }
+        .links {
+            margin-top: 36px;
+            padding-top: 20px;
+            border-top: 1px solid #2a2a2c;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .links a {
+            color: #9ca3af;
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 6px 14px;
+            border: 1px solid #2a2a2c;
+            border-radius: 20px;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .links a:hover {
+            border-color: #c8f544;
+            color: #c8f544;
+        }
+        .lang-toggle {
+            text-align: right;
+            margin-bottom: 24px;
+        }
+        .lang-toggle button {
+            background: transparent;
+            color: #9ca3af;
+            border: 1px solid #2a2a2c;
+            padding: 7px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 8px;
+            font-size: 0.9em;
+            transition: all 0.15s;
+        }
+        .lang-toggle button:hover {
+            border-color: #c8f544;
+            color: #c8f544;
+        }
+        .lang-toggle button.active {
+            background: #c8f544;
+            color: #0e0e0f;
+            border-color: #c8f544;
+            font-weight: 600;
+        }
+        .lang-content {
+            display: none;
+        }
+        .lang-content.active {
+            display: block;
+        }
+        .badge {
+            display: inline-block;
+            background: #c8f544;
+            color: #0e0e0f;
+            font-size: 0.7em;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 10px;
+            margin-left: 6px;
+            vertical-align: middle;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .footer-note {
+            margin-top: 28px;
+            color: #4b5563;
+            font-size: 0.85em;
+        }
+        @media (max-width: 600px) {
+            body { padding: 12px; }
+            .container { padding: 20px; }
+            .tagline { padding-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-toggle">
+            <button id="btn-en" class="active" onclick="switchLang('en')">English</button>
+            <button id="btn-es" onclick="switchLang('es')">Español</button>
+        </div>
+
+        <!-- ═══════════════════════════════════════ ENGLISH ═══════════════════════════════════════ -->
+        <div id="content-en" class="lang-content active">
+
+            <div class="app-header">
+                <div class="app-icon">🧾</div>
+                <h1>SnapSplit Support</h1>
+            </div>
+            <p class="tagline">Split any restaurant bill in seconds — powered by AI.</p>
+
+            <div class="contact-box">
+                <p><strong>Need help?</strong> We're here for you.</p>
+                <p>📧 Email: <a href="mailto:snapsplit.support@gmail.com">snapsplit.support@gmail.com</a></p>
+                <p style="margin-top:10px; color:#9ca3af; font-size:0.9em;">We aim to respond within <strong style="color:#e5e7eb;">2 business days</strong>. Please include your device type (iPhone / Android / Web) and a short description of the issue.</p>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How many free scans do I get?</div>
+                <div class="faq-answer">New accounts include <strong>5 free receipt scans</strong> — no subscription required. Once you've used all 5, you'll be prompted to upgrade to SnapSplit Pro to continue scanning.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">What is SnapSplit Pro and how much does it cost?</div>
+                <div class="faq-answer">SnapSplit Pro is a <strong>$2.99/month</strong> subscription that gives you unlimited receipt scans and full access to all features, including full split history. You can cancel at any time from your App Store or Google Play account settings.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How do I cancel my Pro subscription?</div>
+                <div class="faq-answer">
+                    Subscriptions are managed entirely by Apple or Google — not by SnapSplit.<br><br>
+                    <strong>iPhone:</strong> Settings → your name → Subscriptions → SnapSplit → Cancel.<br>
+                    <strong>Android:</strong> Google Play → Profile → Payments &amp; subscriptions → Subscriptions → SnapSplit → Cancel.<br><br>
+                    Cancellation takes effect at the end of your current billing period. You keep Pro access until then.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">The AI didn't read my receipt correctly — what can I do?</div>
+                <div class="faq-answer">
+                    AI parsing works best under good conditions. If results are off, try these tips:
+                    <ul class="tips-list">
+                        <li>Make sure the receipt is flat and fully in frame.</li>
+                        <li>Use good lighting — avoid shadows across the paper.</li>
+                        <li>Hold the camera steady and wait for it to focus before tapping.</li>
+                        <li>On the parsed results screen, you can tap <strong>Retake Photo</strong> to try again — this won't count against your scan limit.</li>
+                    </ul>
+                    After scanning, you'll always see the parsed items before continuing, so you can catch any errors early.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">What kinds of receipts work best?</div>
+                <div class="faq-answer">
+                    SnapSplit works well with standard printed receipts from restaurants, fast food, cafes, and retail stores. Results may be less accurate with:
+                    <ul class="tips-list">
+                        <li>Handwritten receipts</li>
+                        <li>Very long thermal paper receipts that are faded or curled</li>
+                        <li>Receipts with unusual formatting or non-English characters</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Are my receipt images stored or shared?</div>
+                <div class="faq-answer">No. Your receipt photo is sent securely over HTTPS to our API, passed to Anthropic's Claude AI to extract the line items, and then <strong>immediately discarded</strong> — it is never stored on our servers. See our <a href="https://cedarnavira.github.io/snap-split-legal/PRIVACY_POLICY" target="_blank">Privacy Policy</a> for full details.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How do I assign items to people?</div>
+                <div class="faq-answer">After scanning, add the people at your table, then on the "Who had what?" screen tap each person's name under the items they ordered. You can assign multiple people to the same item — SnapSplit will divide that item's cost equally among everyone assigned to it.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Can one item be shared by multiple people?</div>
+                <div class="faq-answer">Yes! Just tap more than one person under the same item. SnapSplit splits the item's cost evenly among everyone assigned to it. For example, a $15.00 appetizer split between 3 people gives each person $5.00.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How is tax and tip calculated?</div>
+                <div class="faq-answer">SnapSplit pre-fills the tax percentage based on what it finds in the receipt. Tip defaults to 18% but you can change both before calculating. Tax and tip are distributed proportionally — each person pays tip and tax based on their share of the subtotal, not a flat equal split.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Why is the grand total slightly different from the receipt?</div>
+                <div class="faq-answer">This can happen when the tax percentage on the receipt was applied with store-side rounding. SnapSplit uses the extracted tax percentage and distributes it precisely across each person's share. The difference is typically 1 cent and is a normal result of how tax rounding works in point-of-sale systems.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How do I reset my password?</div>
+                <div class="faq-answer">On the login screen, tap <strong>"Forgot password?"</strong>. Enter your email address and we'll send you a reset link. Check your spam folder if you don't see it within a few minutes.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How do I delete my account?</div>
+                <div class="faq-answer">Go to <strong>Settings → Delete Account</strong>. Your account and all associated data — split history, scan count, and preferences — are permanently and immediately deleted. This action cannot be undone.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Is my data private?</div>
+                <div class="faq-answer">Yes. We collect only what is necessary to provide the app (your email, split history, and scan count). We never sell your data. Receipt images are processed in memory and immediately discarded. See our <a href="https://cedarnavira.github.io/snap-split-legal/PRIVACY_POLICY" target="_blank">Privacy Policy</a> for the full details.</div>
+            </div>
+
+            <div class="links">
+                <a href="https://cedarnavira.github.io/snap-split-legal/PRIVACY_POLICY" target="_blank">Privacy Policy</a>
+                <a href="https://cedarnavira.github.io/snap-split-legal/TERMS_OF_SERVICE" target="_blank">Terms of Service</a>
+                <a href="mailto:snapsplit.support@gmail.com">Contact Support</a>
+            </div>
+
+            <p class="footer-note">© 2026 Cedar Navira LLC. All rights reserved.</p>
+        </div>
+
+        <!-- ═══════════════════════════════════════ ESPAÑOL ═══════════════════════════════════════ -->
+        <div id="content-es" class="lang-content">
+
+            <div class="app-header">
+                <div class="app-icon">🧾</div>
+                <h1>Soporte de SnapSplit</h1>
+            </div>
+            <p class="tagline">Divide cualquier cuenta de restaurante en segundos — con inteligencia artificial.</p>
+
+            <div class="contact-box">
+                <p><strong>¿Necesitas ayuda?</strong> Estamos para servirte.</p>
+                <p>📧 Correo: <a href="mailto:snapsplit.support@gmail.com">snapsplit.support@gmail.com</a></p>
+                <p style="margin-top:10px; color:#9ca3af; font-size:0.9em;">Respondemos en <strong style="color:#e5e7eb;">2 días hábiles</strong>. Por favor incluye el tipo de dispositivo (iPhone / Android / Web) y una breve descripción del problema.</p>
+            </div>
+
+            <h2>Preguntas Frecuentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Cuántos escaneos gratis tengo?</div>
+                <div class="faq-answer">Las cuentas nuevas incluyen <strong>5 escaneos de recibos gratis</strong>, sin necesidad de suscripción. Una vez que uses los 5, se te pedirá actualizar a SnapSplit Pro para continuar escaneando.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Qué es SnapSplit Pro y cuánto cuesta?</div>
+                <div class="faq-answer">SnapSplit Pro es una suscripción de <strong>$2.99/mes</strong> que te da escaneos ilimitados y acceso completo a todas las funciones, incluyendo el historial de divisiones. Puedes cancelar en cualquier momento desde la configuración del App Store o Google Play.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Cómo cancelo mi suscripción Pro?</div>
+                <div class="faq-answer">
+                    Las suscripciones las maneja Apple o Google, no SnapSplit.<br><br>
+                    <strong>iPhone:</strong> Configuración → tu nombre → Suscripciones → SnapSplit → Cancelar.<br>
+                    <strong>Android:</strong> Google Play → Perfil → Pagos y suscripciones → Suscripciones → SnapSplit → Cancelar.<br><br>
+                    La cancelación tiene efecto al final del período de facturación actual. Mantienes acceso Pro hasta entonces.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">La IA no leyó bien mi recibo — ¿qué hago?</div>
+                <div class="faq-answer">
+                    El escaneo funciona mejor bajo buenas condiciones. Si los resultados no son correctos, prueba esto:
+                    <ul class="tips-list">
+                        <li>Asegúrate de que el recibo esté plano y completamente dentro del encuadre.</li>
+                        <li>Usa buena iluminación — evita sombras sobre el papel.</li>
+                        <li>Mantén la cámara estable y espera a que enfoque antes de tomar la foto.</li>
+                        <li>En la pantalla de resultados, puedes tocar <strong>Retomar foto</strong> para intentar de nuevo — esto no cuenta contra tu límite de escaneos.</li>
+                    </ul>
+                    Siempre verás los ítems escaneados antes de continuar, para que puedas corregir cualquier error.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Qué tipo de recibos funcionan mejor?</div>
+                <div class="faq-answer">
+                    SnapSplit funciona bien con recibos impresos estándar de restaurantes, comida rápida, cafeterías y tiendas. Los resultados pueden ser menos precisos con:
+                    <ul class="tips-list">
+                        <li>Recibos escritos a mano</li>
+                        <li>Recibos de papel térmico muy largos, desvanecidos o enrollados</li>
+                        <li>Recibos con formatos poco comunes o caracteres no ingleses</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Las fotos de mis recibos se guardan o comparten?</div>
+                <div class="faq-answer">No. Tu foto se envía de forma segura por HTTPS a nuestra API, se pasa a la IA Claude de Anthropic para extraer los ítems, y luego se <strong>descarta inmediatamente</strong> — nunca se almacena en nuestros servidores. Consulta nuestra <a href="https://cedarnavira.github.io/snap-split-legal/PRIVACY_POLICY" target="_blank">Política de privacidad</a> para más detalles.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Cómo asigno ítems a las personas?</div>
+                <div class="faq-answer">Después de escanear, agrega a las personas de tu mesa. En la pantalla "¿Quién pidió qué?", toca el nombre de cada persona debajo de los ítems que ordenaron. Puedes asignar varias personas al mismo ítem — SnapSplit dividirá ese costo equitativamente entre todos los asignados.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Puede un ítem ser compartido por varias personas?</div>
+                <div class="faq-answer">¡Sí! Solo toca más de una persona bajo el mismo ítem. SnapSplit divide el costo del ítem equitativamente entre todos los asignados. Por ejemplo, una entrada de $15.00 dividida entre 3 personas le corresponde $5.00 a cada una.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Cómo se calcula el impuesto y la propina?</div>
+                <div class="faq-answer">SnapSplit pre-llena el porcentaje de impuesto basándose en lo que encuentra en el recibo. La propina viene en 18% por defecto, pero puedes cambiar ambos antes de calcular. El impuesto y la propina se distribuyen proporcionalmente — cada persona paga según su parte del subtotal, no una división plana igual.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Por qué el total general difiere levemente del recibo?</div>
+                <div class="faq-answer">Esto puede ocurrir cuando el porcentaje de impuesto en el recibo fue aplicado con redondeo del sistema de caja registradora. SnapSplit usa el porcentaje extraído y lo distribuye con precisión entre cada persona. La diferencia suele ser de 1 centavo y es un resultado normal de cómo funciona el redondeo de impuestos en los sistemas de punto de venta.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Cómo restablezco mi contraseña?</div>
+                <div class="faq-answer">En la pantalla de inicio de sesión, toca <strong>"¿Olvidaste tu contraseña?"</strong>. Ingresa tu correo electrónico y te enviaremos un enlace de restablecimiento. Si no lo ves en unos minutos, revisa tu carpeta de spam.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Cómo elimino mi cuenta?</div>
+                <div class="faq-answer">Ve a <strong>Configuración → Eliminar cuenta</strong>. Tu cuenta y todos los datos asociados — historial de divisiones, conteo de escaneos y preferencias — se eliminan de forma permanente e inmediata. Esta acción no se puede deshacer.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">¿Mis datos son privados?</div>
+                <div class="faq-answer">Sí. Solo recopilamos lo necesario para proveer la app (tu correo, historial de divisiones y conteo de escaneos). Nunca vendemos tus datos. Las fotos de recibos se procesan en memoria y se descartan de inmediato. Consulta nuestra <a href="https://cedarnavira.github.io/snap-split-legal/PRIVACY_POLICY" target="_blank">Política de privacidad</a> para más detalles.</div>
+            </div>
+
+            <div class="links">
+                <a href="https://cedarnavira.github.io/snap-split-legal/PRIVACY_POLICY" target="_blank">Política de privacidad</a>
+                <a href="https://cedarnavira.github.io/snap-split-legal/TERMS_OF_SERVICE" target="_blank">Términos de servicio</a>
+                <a href="mailto:snapsplit.support@gmail.com">Contactar soporte</a>
+            </div>
+
+            <p class="footer-note">© 2026 Cedar Navira LLC. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-toggle button').forEach(el => el.classList.remove('active'));
+            document.getElementById('content-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+
+        function toggleFaq(questionEl) {
+            const item = questionEl.parentElement;
+            const isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+            // Open clicked one if it wasn't open
+            if (!isOpen) item.classList.add('open');
+        }
+    </script>
+</body>
+</html>
