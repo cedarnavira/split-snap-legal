@@ -23,7 +23,6 @@ A receipt splitting app powered by AI. Photograph a restaurant receipt and split
 
 For support or privacy questions:
 - **Email**: splitsnap.privacy@gmail.com
-- **Issues**: [Report an issue](https://github.com/cedarnavira/snap-split-legal/issues)
 
 ---
 
