@@ -1,8 +1,8 @@
 # Terms of Service
 
 **App name:** SnapSplit
-**Developer:** SnapSplit
-**Last updated:** May 25, 2026
+**Developer:** Cedar Navira
+**Last updated:** June 3, 2026
 **Effective date:** March 20, 2026
 
 ---
@@ -70,27 +70,27 @@ The App uses artificial intelligence (Anthropic Claude) to extract line items fr
 - Handwritten text
 - Partially obscured or damaged receipts
 
-**You are responsible for reviewing and verifying all parsed items before finalizing any split.** SnapSplit is not liable for any financial disputes, overpayments, underpayments, or other outcomes arising from inaccurate AI parsing.
+**You are responsible for reviewing and verifying all parsed items before finalizing any split.** Cedar Navira LLC is not liable for any financial disputes, overpayments, underpayments, or other outcomes arising from inaccurate AI parsing.
 
 ---
 
 ## 7. Intellectual Property
 
-All rights, title, and interest in and to the App — including its design, code, branding, and content — are owned by SnapSplit. These Terms do not grant you any rights to use the SnapSplit name, logo, or trademarks.
+All rights, title, and interest in and to the App — including its design, code, branding, and content — are owned by Cedar Navira LLC. These Terms do not grant you any rights to use the SnapSplit or Cedar Navira name, logo, or trademarks.
 
-You retain ownership of any content you submit (receipt images, split data). By submitting content, you grant SnapSplit a limited license to process and store it solely for the purpose of providing the App's features.
+You retain ownership of any content you submit (receipt images, split data). By submitting content, you grant Cedar Navira LLC a limited license to process and store it solely for the purpose of providing the App's features.
 
 ---
 
 ## 8. Privacy
 
-Your use of the App is also governed by our [Privacy Policy](https://mdltorre85.github.io/split-snap-legal/PRIVACY_POLICY). By using the App, you agree to the collection and use of information as described there.
+Your use of the App is also governed by our [Privacy Policy](https://cedarnavira.github.io/snap-split-legal/PRIVACY_POLICY). By using the App, you agree to the collection and use of information as described there.
 
 ---
 
 ## 9. Third-Party Services
 
-The App integrates with third-party services including Supabase, Anthropic, Vercel, and RevenueCat. Your use of those services is subject to their respective terms and policies. SnapSplit is not responsible for the availability, accuracy, or conduct of any third-party service.
+The App integrates with third-party services including Supabase, Anthropic, Vercel, and RevenueCat. Your use of those services is subject to their respective terms and policies. Cedar Navira LLC is not responsible for the availability, accuracy, or conduct of any third-party service.
 
 ---
 
@@ -98,7 +98,7 @@ The App integrates with third-party services including Supabase, Anthropic, Verc
 
 THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
-SnapSplit does not warrant that:
+Cedar Navira LLC does not warrant that:
 - The App will be available at all times or free from errors or interruptions.
 - The AI parsing results will be accurate or complete.
 - The App will meet your specific requirements.
@@ -107,26 +107,26 @@ SnapSplit does not warrant that:
 
 ## 11. Limitation of Liability
 
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, SPLITSNAP SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF MONEY, DATA, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING FROM:
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, CEDAR NAVIRA LLC SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF MONEY, DATA, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING FROM:
 
 - Your use of or inability to use the App.
 - Inaccurate AI parsing results.
 - Unauthorized access to your account.
 - Any interruption or cessation of the App.
 
-IN NO EVENT SHALL SPLITSNAP'S TOTAL LIABILITY EXCEED THE AMOUNT YOU PAID FOR THE APP IN THE 12 MONTHS PRECEDING THE CLAIM, OR $10.00, WHICHEVER IS GREATER.
+IN NO EVENT SHALL CEDAR NAVIRA LLC'S TOTAL LIABILITY EXCEED THE AMOUNT YOU PAID FOR THE APP IN THE 12 MONTHS PRECEDING THE CLAIM, OR $10.00, WHICHEVER IS GREATER.
 
 ---
 
 ## 12. Indemnification
 
-You agree to defend, indemnify, and hold harmless SnapSplit from any claims, damages, or expenses (including reasonable legal fees) arising from your use of the App, your violation of these Terms, or your violation of any third-party rights.
+You agree to defend, indemnify, and hold harmless Cedar Navira LLC from any claims, damages, or expenses (including reasonable legal fees) arising from your use of the App, your violation of these Terms, or your violation of any third-party rights.
 
 ---
 
 ## 13. Termination
 
-SnapSplit reserves the right to suspend or terminate your account at any time for violation of these Terms, with or without notice. Upon termination, your right to use the App ceases immediately. You may delete your account at any time from the Settings screen. Upon deletion, your account and all associated data are permanently and immediately removed and cannot be recovered.
+Cedar Navira LLC reserves the right to suspend or terminate your account at any time for violation of these Terms, with or without notice. Upon termination, your right to use the App ceases immediately. You may delete your account at any time from the Settings screen. Upon deletion, your account and all associated data are permanently and immediately removed and cannot be recovered.
 
 ---
 
@@ -147,12 +147,29 @@ These Terms are governed by the laws of the State of Florida, United States, wit
 
 ---
 
-## 16. Contact
+## 16. General Provisions
 
-For any questions about these Terms:
+### 16.1 Entire Agreement
+These Terms, together with the Privacy Policy, constitute the entire agreement between you and Cedar Navira LLC regarding the App and supersede all prior agreements or understandings on the same subject.
 
-**Email:** splitsnap.privacy@gmail.com
+### 16.2 Severability
+If any provision of these Terms is found to be invalid or unenforceable by a court of competent jurisdiction, that provision will be enforced to the maximum extent permissible and the remaining provisions will continue in full force and effect.
+
+### 16.3 No Waiver
+Cedar Navira LLC's failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.
 
 ---
 
-*These Terms of Service were last updated on March 20, 2026.*
+## 17. Contact
+
+For any questions about these Terms:
+
+**Legal entity:** Cedar Navira LLC
+**DBA / App Store name:** Cedar Navira
+**App:** SnapSplit
+**Email:** splitsnap.privacy@gmail.com
+**Website:** [cedarnavira.com](https://cedarnavira.com)
+
+---
+
+*These Terms of Service were last updated on June 3, 2026.*

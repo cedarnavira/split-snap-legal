@@ -1,15 +1,15 @@
 # Privacy Policy
 
 **App name:** SnapSplit
-**Developer:** SnapSplit
-**Last updated:** May 25, 2026
+**Developer:** Cedar Navira
+**Last updated:** June 3, 2026
 **Effective date:** March 20, 2026
 
 ---
 
 ## 1. Introduction
 
-SnapSplit is an independent app ("I", "me", or "my"). I am committed to protecting your privacy. This Privacy Policy explains what personal information is collected, how it is used and shared, and your rights regarding your data when you use the SnapSplit mobile application and web app (collectively, the "App").
+SnapSplit is operated by Cedar Navira LLC ("we", "us", or "our"). We are committed to protecting your privacy. This Privacy Policy explains what personal information is collected, how it is used and shared, and your rights regarding your data when you use the SnapSplit mobile application and web app (collectively, the "App").
 
 By downloading, installing, or using the App, you acknowledge that you have read and agree to this Privacy Policy. If you do not agree, do not use the App.
 
@@ -132,7 +132,7 @@ No method of transmission or storage is 100% secure. In the event of a data brea
 
 ## 9. California Residents — Privacy Rights
 
-Although SnapSplit is an independent app that does not meet the revenue or data volume thresholds that legally require CCPA compliance, I voluntarily extend the following rights to California residents as a matter of good faith:
+Although Cedar Navira LLC does not meet the revenue or data volume thresholds that legally require CCPA compliance, we voluntarily extend the following rights to California residents as a matter of good faith:
 
 - **Right to Know** — You may request a summary of the personal information collected about you and why.
 - **Right to Delete** — You may request deletion of your personal information.
@@ -171,6 +171,8 @@ Personal information is not disclosed to third parties for their direct marketin
 ## 11. EU Residents — GDPR Rights
 
 If you are located in the European Union or European Economic Area, the General Data Protection Regulation (GDPR) applies to the processing of your personal data.
+
+**Data Controller:** Cedar Navira LLC is the data controller for the personal data described in this policy. Contact details are provided in Section 16.
 
 ### 11.1 Legal Basis for Processing
 
@@ -222,7 +224,7 @@ You can revoke camera or photo library access at any time in your device Setting
 
 ## 13. Children's Privacy
 
-The App is not directed at children under 13 years of age. Personal information from children under 13 is not knowingly collected. If you are a parent or guardian and believe your child has provided personal information through the App, contact me at splitsnap.privacy@gmail.com and the information will be promptly deleted.
+The App is not directed at children under 13 years of age. Personal information from children under 13 is not knowingly collected. If you are a parent or guardian and believe your child has provided personal information through the App, contact us at splitsnap.privacy@gmail.com and the information will be promptly deleted.
 
 ---
 
@@ -245,12 +247,15 @@ This Privacy Policy is governed by the laws of the State of Florida, United Stat
 
 ## 16. Contact
 
-For any privacy-related questions, requests, or concerns, contact me directly:
+For any privacy-related questions, requests, or concerns, contact us directly:
 
+**Legal entity:** Cedar Navira LLC
+**DBA / App Store name:** Cedar Navira
 **App:** SnapSplit
 **Email:** splitsnap.privacy@gmail.com
+**Website:** [cedarnavira.com](https://cedarnavira.com)
 
-I aim to respond to all inquiries within **5 business days**.
+We aim to respond to all inquiries within **5 business days**.
 
 ---
 
